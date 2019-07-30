@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
+// import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   state = {
@@ -47,11 +48,18 @@ deleteHandler = (index) =>{
       border:'2px solid blue',
       padding:'8px',
       cursor:'pointer',
-      boxShadow:  '0 10px 19px #ccc'
+      boxShadow:  '0 10px 19px #ccc',
+      // ':hover':{      //all sudo selector are in strings
+      //   backgroundColor: 'lightgreen',
+      //   color:'black'
+      // }
     };
     let NewChange = null;
     if(this.state.showFigure){
       style.backgroundColor = 'red';
+      // style[':hover'] = {   //all sudo are in strings
+      //     backgroundColor: 'salmon',
+      //     color:'black'}
       NewChange  = (
       <div>
         {/* index is provided by javascipt*/}
@@ -79,13 +87,14 @@ deleteHandler = (index) =>{
     }
     const classes =[];
     if(this.state.person.length <=2){
-      classes.push('red');
+      classes.push('red');//classes =['red']
     }
     if (this.state.person.length <=1){
-      classes.push('bold');
+      classes.push('bold');//classes = ['red','bold']
     }
     console.log(classes);
     return (
+      //  <StyleRoot>
       <div className="App">
         <h1> My name is Akinwale</h1>
         <p className = {classes.join(" ")}> This Text Changes on person length</p>
@@ -102,8 +111,9 @@ deleteHandler = (index) =>{
         {/*</div>*/}
         {/*}*/}
       </div>
+       // </StyleRoot>
     );
   }
 }
-
 export default App;
+// export default Radium(App);
