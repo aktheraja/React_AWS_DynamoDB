@@ -6,3 +6,9 @@
     padding: 16px;
     text-align: center;
 }
+/*sets media query threshold it make it stay at 500px width*/
+@media (min-width:500px){
+    .Person{
+    width:450px ;
+    }
+}
